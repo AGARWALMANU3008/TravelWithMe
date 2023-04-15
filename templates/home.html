@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #aaafdf;
+        border-width: 1cm;
+        border: #0e0e0f;
+    }
+    
+    .navbar-logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .navbar-menu {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .navbar-menu-item {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+    }
+    
+    .navbar-menu-item:hover {
+        background-color: #d4d4d4;
+    }
+    
+    
+    .bg-image{
+    background-image: url("https://images.unsplash.com/photo-1502444330042-d1a1ddf9bb5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1173&q=80");
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:cover;
+    }
+    
+    .heading{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1;
+    text-decoration: solid, underline;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top: 150px;
+    }
+    
+    .subheading{
+    color:white;
+    font-size: 20px;
+    line-height: 0;
+    text-align: center;
+    text-decoration:double;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    }
+    
+    .destination, .month, .search, .name, .email{
+    display: inline;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    }
+    
+    .destination,.name,.email{
+    border-width:3px;
+    border-color: black;
+    border-radius: 20px;
+    border-style: solid;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    }
+    
+    .month{
+    border-width:3px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    list-style:lower-roman;
+    }
+    
+    .search{
+    background-color: rgb(255, 111, 111);
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 20px;
+    width: 175px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    }
+    .search:hover{
+    background-color: rgb(255, 62, 62);
+    cursor: pointer;
+    }
+    .search:active{
+    background-color: rgb(255, 9, 9);
+    }
+    
+    .score{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(55, 55, 55);
+    line-height: 100px;
+    display:inline;
+    }
+    
+    .score_{
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(55, 55, 55);
+    line-height: 100px;
+    display:inline;
+    padding-left: 300px;
+    padding-right: 300px;
+    }
+    
+    .score_detail1{
+    display: inline;
+    font-size: 20px;
+    font-family: Tahoma;
+    line-height: 20px;
+    padding-right: 30px;
+    }
+    .score_detail2{
+    display: inline;
+    font-size: 20px;
+    font-family: Tahoma;
+    line-height: 20px;
+    text-align: center;
+    padding-left: 195px;
+    padding-right: 220px;
+    }
+    .score_detail3{
+    display: inline;
+    font-size: 20px;
+    font-family: Tahoma;
+    line-height: 20px;
+    }
+    
+    .page2{
+    display: inline-block;
+    font-family: Tahoma;
+    font-size: 40px;
+    padding-top: 300px;
+    padding-left: 0px;
+    font-weight: bold;
+    width:500px;
+    text-align: left;
+    vertical-align: top;
+    }
+    
+    .image2{
+    display: inline-block;
+    margin-top: 50px;
+    padding-left: 180px;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    }
+    
+    .page2a{
+    display: block;
+    width:550px;
+    font-size: 20px;
+    font-weight: lighter;
+    font-family: Tahoma;
+    padding-top: 20px;
+    text-align: left;
+    line-height: 30px;
+    }
+    
+    .page2b{
+    display: block;
+    font-weight: bold;
+    font-size: 40px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    background-image:url("data:image/jpeg;base64,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");
+    margin-bottom: -28px;
+    opacity: 0.92;
+    }
+    
+    .sv-tiles-list {
+    /* Add your styles here */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-basis: auto;
+    margin-bottom: auto ;
+    background-image: url("https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80")
+    }
+    
+    .sv-tile {
+    /* Add your styles here */
+    flex-basis: calc(33% - 20px); /* Adjust the width as needed */
+    max-width: calc(33% - 20px); /* Limit the width of the tile */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    margin: 10px;
+    background-color: #ffffff; /* Set the background color for the tile */
+    opacity: 0.5;
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding inside the tile */
+    box-sizing: border-box; /* Include padding in total width */
+    box-flex: 1; /* Prevent tiles from growing or shrinking */
+    }
+    
+    .sv-tile_body {
+    /* Add your styles here */
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .sv-tile__table-row {
+    display: flex;
+    margin-bottom: 10px; /* Add margin between each row */
+    flex-wrap: wrap; /* Allow table rows to wrap within a tile */
+    }
+    
+    .sv-tile__table-column {
+    flex-basis: 5%; /* Adjust the width as needed */
+    flex-grow: 1; /*Allow table columns to grow and fill the row */
+    }
+    
+    .sv-name {
+    /* Add your styles here */
+    font-weight: bold; /* Set font weight to bold */
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIN MY TRIP</title>
+       
+</head>
+
+<body class="background"="https://s20426.pcdn.co/wp-content/uploads/2018/11/iStock-906787788-1200x801.jpg">
+
+    <div class="navbar">
+        <div class="navbar-logo">TravelWithMe</div>
+        <div class="navbar-menu">
+            <a href="/" class="navbar-menu-item">Travel Buddies</a>
+            <a href="/lookup" class="navbar-menu-item">Find Travel Hosts</a>
+            <a href="/host" class="navbar-menu-item">Register as Host</a>
+        </div>
+    </div>
+
+
+<div class="bg-image">
+    <div class="heading">
+        <h1>FIND TRAVEL BUDDIES</h1>
+    </div>
+    
+    <div class=" subheading">
+        <p>Verified trip buddies across thr world! Join them based on your travel dates and destination.</p>
+    </div>
+    <center>
+        <form action="/" method="POST">
+    <input class="destination" type="text" placeholder="Where would you like to go? " name="destination" id="destination">
+    <input class="month" type="text" placeholder="Enter a month" name="month" id="month">
+    <br><br>
+    <input class="email" type="text" placeholder="Enter contact email" name="email" id="email">
+    <input class="name" type="text" placeholder="Name" name="name" id="name">
+    <br><br>
+    <button class="search" type="submit" >SUBMIT</button>
+        </form>
+    </center>
+</div>
+    <center>
+        <div class="score">200K+</div>
+        <div class="score_">7K+</div>
+        <div class="score">4.4</div>
+    </center>
+    <center>
+        <div class="score_detail1">Travel buddies found</div>
+        <div class="score_detail2">Destinations Travelled</div>
+        <div class="score_detail3">Trustpilot score</div>
+    </center>
+
+    <center>
+<div>
+    <div class="page2">Real and verified travel buddies!
+        _____
+        <div class="page2a">
+            Every traveler is verified for their identity. Every travel group is organized by an experienced traveler looking for travel buddies.
+            This will ensure the best experience a traveler can ever get!
+        </div>
+    </div>
+    <div class="image2">
+        <img src="https://cdn2.stylecraze.com/wp-content/uploads/2021/09/Fun-And-Exciting-Games-To-Play-On-A-Road-Trip-Banner.jpg" width=" 500px" height="600px">
+    </div>
+</div>
+    </center>
+
+    <center>
+        <div class="page2b" style="color: #a0d7f0;">
+            <u>Find the perfect group to travel with!</u>
+        </div>
+    </center>
+    <br><br>
+
+    
+
+    <div class="sv-tiles-list" theme="sv-is-light">
+        {% for traveler in  all_buddies%}
+    
+        <div class="sv-tile sv-size-big" >
+            <div class="sv-tile_body">
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Name:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.name}}</span>
+                    </div>
+                </div>
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Destination:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.destination}}</span>
+                    </div>
+                </div>
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Email:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.email}}</span>
+                    </div>
+                </div>
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Month:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.month}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+</div>
+
+
+
+
+</body>
+</html>

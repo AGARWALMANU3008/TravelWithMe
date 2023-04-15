@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    
+    .bg-image{
+    background-image: url("https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?w=996&t=st=1681585021~exp=1681585621~hmac=3333c96c694d2bd50490b134244fac9241af595accf3700428e406a097c43bb4");
+    height: 700px;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position:cover;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #aaafdf;
+        border-width: 1cm;
+        border: #0e0e0f;
+    }
+    
+    .navbar-logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .navbar-menu {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .navbar-menu-item {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+    }
+    
+    .navbar-menu-item:hover {
+        background-color: #d4d4d4;
+    }
+    .sv-tiles-list {
+    /* Add your styles here */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    
+    .sv-tile {
+    /* Add your styles here */
+    flex-basis: calc(33.33% - 20px); /* Adjust the width as needed */
+    max-width: calc(33.33% - 20px); /* Limit the width of the tile */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    background-color: #eac9ee; /* Set the background color for the tile */
+    opacity: 0.67;
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding inside the tile */
+    box-sizing: border-box; /* Include padding in total width */
+    box-flex: 0; /* Prevent tiles from growing or shrinking */
+    }
+    
+    .sv-tile_body {
+    /* Add your styles here */
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .sv-tile__table-row {
+    display: flex;
+    margin-bottom: 10px; /* Add margin between each row */
+    flex-wrap: wrap; /* Allow table rows to wrap within a tile */
+    }
+    
+    .sv-tile__table-column {
+    flex-basis: 30%; /* Adjust the width as needed */
+    flex-grow: 1; /* Allow table columns to grow and fill the row */
+    }
+    
+    .sv-name {
+    /* Add your styles here */
+    font-weight: bold; /* Set font weight to bold */
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Look for Housing</title>
+       
+</head>
+
+<body class="bg-image">
+    <div class="navbar">
+        <div class="navbar-logo">TravelWithMe</div>
+        <div class="navbar-menu">
+            <a href="/" class="navbar-menu-item">Travel Buddies</a>
+            <a href="/lookup" class="navbar-menu-item">Find Travel Hosts</a>
+            <a href="/host" class="navbar-menu-item">Register as Host</a>
+        </div>
+    </div>
+<br>
+
+
+    <div class="sv-tiles-list" theme="sv-is-light">
+        {% for traveler in houses %}x
+        <div class="sv-tile sv-size-big">
+            <div class="sv-tile_body">
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Location:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.location}}</span>
+                    </div>
+                </div>
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Rooms:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.rooms}}</span>
+                    </div>
+                </div>
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Cost:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.cost}}</span>
+                    </div>
+                </div>
+                <div class="sv-tile__table-row">
+                    <div class="sv-tile__table-column sv-name">
+                        <span>Description:</span>
+                    </div>
+                    <div class="sv-tile__table-column sv-name">
+                        <span>{{traveler.description}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Your Rooms</title>
+    <style>
+        .bg {
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/921/708/937/best-hotels-travel-thailand-tourism-wallpaper-preview.jpg");
+            height: 1000px;
+            opacity: 0.9; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position:cover;
+  }
+  
+  h1 {
+    padding-top: 110px;
+    line-height: 100px;
+    text-align: center;
+    text-shadow: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    /* color: rgb(247, 244, 78); */
+    color: rgb(249, 207, 131);
+    font-size: 50px;
+
+  }
+  
+  form {
+    
+    max-width: 600px;
+    margin: 0 auto;
+    /* background-color:rgb(222, 239, 255); */
+    background-color: rgb(245, 226, 190);
+    /* padding-right:20px; */
+    padding-right:30px;
+    padding-left: 15px;
+    padding-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+  }
+  
+  button {
+    --color: #0077ff;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    margin: 20px;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--color);
+    border: 2px solid var(--color);
+    border-radius: 6px;
+    position: relative;
+  }
+  
+  button::before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+  
+  button:hover {
+    color: white;
+  }
+  
+  button:before {
+    top: 100%;
+    left: 100%;
+    transition: .3s all;
+  }
+  
+  button:hover::before {
+    top: -30px;
+    left: -30px;
+  }
+
+  .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #aaafdf;
+        border-width: 1cm;
+        border: #0e0e0f;
+        margin-bottom: -27px;
+    }
+    
+    .navbar-logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    .navbar-menu {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .navbar-menu-item {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+    }
+    
+    .navbar-menu-item:hover {
+        background-color: #d4d4d4;
+    }
+    .sv-tiles-list {
+    /* Add your styles here */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+    
+    .sv-tile {
+    /* Add your styles here */
+    flex-basis: calc(33.33% - 20px); /* Adjust the width as needed */
+    max-width: calc(33.33% - 20px); /* Limit the width of the tile */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+    background-color: #3e61c2; /* Set the background color for the tile */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    padding: 20px; /* Add padding inside the tile */
+    box-sizing: border-box; /* Include padding in total width */
+    box-flex: 0; /* Prevent tiles from growing or shrinking */
+    }
+    
+    .sv-tile_body {
+    /* Add your styles here */
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .sv-tile__table-row {
+    display: flex;
+    margin-bottom: 10px; /* Add margin between each row */
+    flex-wrap: wrap; /* Allow table rows to wrap within a tile */
+    }
+    
+    .sv-tile__table-column {
+    flex-basis: 30%; /* Adjust the width as needed */
+    flex-grow: 1; /* Allow table columns to grow and fill the row */
+    }
+    
+    .sv-name {
+    /* Add your styles here */
+    font-weight: bold; /* Set font weight to bold */
+    }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-logo">TravelWithMe</div>
+      <div class="navbar-menu">
+          <a href="/" class="navbar-menu-item">Travel Buddies</a>
+          <a href="/lookup" class="navbar-menu-item">Find Travel Hosts</a>
+          <a href="/host" class="navbar-menu-item">Register as Host</a>
+      </div>
+  </div>
+     <div class="bg">
+
+        <h1>
+            <u>
+                List Your Rooms
+            </u>
+          
+           
+        </h1>
+        <form action="/host" method="POST">
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" required>
+    
+          <label for="rooms">Number of Rooms:</label>
+          <input type="number" id="rooms" name="rooms" min="1" required>
+    
+          <label for="cost">Cost of each Room per Day:</label>
+          <input type="number" id="cost" name="cost" min="50" required>
+    
+          <label for="description">Description:</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+            <center>
+                <button type="submit">Register</button>
+            </center>
+        </form>
+
+     </div>
+
+  </body>
+</html>
